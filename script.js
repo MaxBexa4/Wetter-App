@@ -67,7 +67,10 @@ async function getWeather() {
 function renderHourly(containerId, times, temps, weatherCodes = [], useIcons = false) {
   const container = document.getElementById(containerId);
   container.classList.add("hourly");
-  container.innerHTML = "";
+  container.innerHTML = `
+  <div class="hourly-bg"></div>
+`;
+
 
   const baseCount = 24;
   const hours = times.slice(0, baseCount);

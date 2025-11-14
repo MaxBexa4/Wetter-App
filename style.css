@@ -164,3 +164,50 @@ body.dark-mode .hour {
   background-color: var(--button-hover);
   transform: scale(1.05);
 }
+
+.hourly {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.hour-scroll {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+    padding-bottom: 10px;
+    scroll-behavior: auto;
+}
+
+.hour {
+    min-width: 70px;
+    padding: 10px;
+    text-align: center;
+    background: var(--box-bg);
+    border-radius: 10px;
+    user-select: none;
+}
+
+.hour-chart {
+    width: 100%;
+    height: 180px;
+    margin-top: 10px;
+}
+/* === Hintergrund hinter Stundenblöcken (Lila + nur oben/unten schwarze Ränder) === */
+.hourly-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;                          /* etwas niedriger als die Stundenblöcke */
+    width: 100%;
+    background: rgba(150, 80, 255, 0.35); /* halbtransparentes Lila */
+    
+    border-top: 8px solid black;          /* oberer Rand */
+    border-bottom: 8px solid black;       /* unterer Rand */
+    
+    border-left: none;                    /* kein Rand links */
+    border-right: none;                   /* kein Rand rechts */
+    
+    border-radius: 0;                     /* keine Rundungen, damit der Rand gerade ist */
+    z-index: 1;                           /* bleibt hinter den Stunden */
+}
